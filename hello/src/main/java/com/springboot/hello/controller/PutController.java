@@ -1,5 +1,6 @@
 package com.springboot.hello.controller;
 
+import com.springboot.hello.dto.MemberDto;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +21,17 @@ public class PutController {
         });
 
         return sb.toString();
+    }
+
+    @PutMapping(value = "/member1")
+    public String postmemberDto1(@RequestBody MemberDto memberDto)
+    {
+        return memberDto.toString();
+    }
+
+    @PutMapping(value = "/member2")
+    public MemberDto postmemberDto2(@RequestBody MemberDto memberDto)
+    {
+        return memberDto;
     }
 }
